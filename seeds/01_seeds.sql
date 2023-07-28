@@ -4,10 +4,10 @@ VALUES ('Charlie', 'replaceEmail@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED
 ('Sarah', 'replace@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
 ('Helga', 'email.Email@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
 
-INSERT INTO properties (owner_id, title, description, thumbnail_photo_url, cover_photo_url,cost_per_night, parking_spaces, number_of_bathrooms, number_of_bedrooms, country, street, city, province, post_code, active)
-VALUES (1, 'title1', 'someDescription', 'thumbnailphoto', 'cover-photo', 500, 2, 3, 'Canada', '65 west Street', 'Edmonton', 't5c 3b2', true),
- (1, 'title2', 'someDescription', 'handle', 'cover-photo', 1000, 2, 1, 'United States', '93 west Street', 'Edmonton', 't3c 0b2', true),
-(1, 'title3', 'someDescription', 'photo', 'cover-photo', 250, 2, 2, 'Canada', '65 west Street', 'Edmonton', 't3c 0b2', true);
+INSERT INTO properties (owner_id, title, description, thumbnail_photo_url, cover_photo_url, cost_per_night, parking_spaces, number_of_bathrooms, number_of_bedrooms, country, street, city, province, post_code, active)
+VALUES (1, 'title1', 'someDescription', 'thumbnailphoto', 'cover-photo', 500, 2, 2, 3, 'Canada', '65 west Street', 'Edmonton', 'Alberta', 't5c 3b2', true),
+ (2, 'title2', 'someDescription', 'handle', 'cover-photo', 1000, 2, 2, 1, 'United States', '93 west Street', 'Edmonton', 'Alberta', 't3c 0b2', true),
+(3, 'title3', 'someDescription', 'photo', 'cover-photo', 250, 2, 2, 2, 'Canada', '65 west Street', 'Edmonton', 'Alberta', 't3c 0b2', true);
 
 INSERT INTO reservations (start_date, end_date, property_id, guest_id)
 VALUES ('2018-09-11', '2018-09-26', 1, 1),
