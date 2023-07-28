@@ -1,15 +1,13 @@
 
-
 INSERT INTO users ( name, email, password )
-Values ("charlie", "Gmail@gmail.com", "$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u."),
-("Sarah", "Hmail@gmail.com", "$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u."),
-("Javier", "seomthing.mail@gmail.com", "$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.");
+VALUES ('Charlie', 'replaceEmail@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
+('Sarah', 'replace@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
+('Helga', 'email.Email@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
 
-INSERT INTO properties (owner_id, title, description, thubnail_photo_url, cover_photo_url,cost_per_night, parking_spaces, number_of_bathrooms, number_of_bedrooms, country, street, city, province, post_code, active)
-VALUES ( 1,"Database", "This is some description text.", "thumbnail", "Look at me I'm a photo.", 300, 2, 2, 3, "Canada", "4321 North Pole lane", "Not British Columbia", "T4H H2L", TRUE),
- ( 2, "Web Application", "This is another description.", "handle", "Check out this image.", 150, 5, 1, 4, "United States", "123 Main Street", "Anytown", "ABC 123", TRUE),
-( 3, "Mobile App", "Here's some random description.", "thumbnail", "A cool picture here.", 500, 3, 4, 1, "Australia", "789 High Street", "Sometown", "XYZ 789", TRUE);
-
+INSERT INTO properties (owner_id, title, description, thumbnail_photo_url, cover_photo_url,cost_per_night, parking_spaces, number_of_bathrooms, number_of_bedrooms, country, street, city, province, post_code, active)
+VALUES (1, 'title1', 'someDescription', 'thumbnailphoto', 'cover-photo', 500, 2, 3, 'Canada', '65 west Street', 'Edmonton', 't5c 3b2', true),
+ (1, 'title2', 'someDescription', 'handle', 'cover-photo', 1000, 2, 1, 'United States', '93 west Street', 'Edmonton', 't3c 0b2', true),
+(1, 'title3', 'someDescription', 'photo', 'cover-photo', 250, 2, 2, 'Canada', '65 west Street', 'Edmonton', 't3c 0b2', true);
 
 INSERT INTO reservations (start_date, end_date, property_id, guest_id)
 VALUES ('2018-09-11', '2018-09-26', 1, 1),
@@ -18,18 +16,9 @@ VALUES ('2018-09-11', '2018-09-26', 1, 1),
 
 
 INSERT INTO property_reviews (guest_id, property_id, reservation_id, rating, message)
-VALUES  ( 101, 201, 301, 4, "Great place to stay! The view from the property was breathtaking."),
-( 102, 202, 302, 5, "Amazing experience! The property was well-maintained, and the host was very friendly."),
-( 104, 204, 304, 2, "Not satisfied. The property had issues with plumbing and cleanliness.");
-
-
-
-
-
-
-
-
-
+VALUES  (1, 1, 1, 4, 'message-text-here'),
+(2, 2, 2, 5, 'message-text-here'),
+(3, 3, 3, 2, 'message-text-here');
 
 
 
