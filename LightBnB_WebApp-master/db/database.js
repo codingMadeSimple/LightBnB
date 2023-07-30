@@ -69,7 +69,7 @@ const addUser = function (user) {
       `INSERT INTO users (name, password, email) VALUES ($1, $2, $3);`, [user.name, user.password, user.email])
     .then(() => {
       console.log(user)
-      return Promise.resolve(getUserWithEmail(user.email))
+      return getUserWithEmail(user.email)
     })
     .catch((err) => {
       console.log(err.message);
@@ -83,8 +83,43 @@ const addUser = function (user) {
  * @param {string} guest_id The id of the user.
  * @return {Promise<[{}]>} A promise to the reservations.
  */
+// const getAllReservations = function (guest_id, limit = 10) {
+//   return pool
+//     .query(
+//       `SELECT * FROM reservations
+//       JOIN properties ON properties.id=reservations.property_id
+//       WHERE guest_id = $1
+//       LIMIT $2
+//       ;`, [guest_id, limit])
+//     .then((result) => {
+//       if(result.rows.length===0){
+//         return null;
+//       }
+//       return result.rows;
+
+//     })
+//     .catch((err) => {
+//       console.log(err.message);
+//     });
+// };
+
 const getAllReservations = function (guest_id, limit = 10) {
-  return getAllProperties(null, 2);
+  return pool
+  .query(`SELECT * FROM reservations
+  JOIN properties ON properties.id = reservations.property_id
+  WHERE guest_id = $1 LIMIT $2;`, [guest_id, limit])
+    .then((result) => {
+      if (result.rows.length === 0) {
+        console.log("!!!!!!!!!!!1result.rows", result.rows);
+        return null;
+      }
+      console.log("!!!!!!!!!!!1result.rows", result.rows);
+      return result.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+      return err;
+    });
 };
 
 /// Properties
