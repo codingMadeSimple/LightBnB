@@ -171,19 +171,15 @@ if(options.minimum_rating != ""){
   queryString += `HAVING AVG(property_reviews.rating) >= $${queryParams.length}`;
 }
 
-
-// console.log(queryString)
-// console.log(queryParams)
-
   // 4
   queryParams.push(limit);
   queryString += `
   ORDER BY cost_per_night
   LIMIT $${queryParams.length};
   `;
-  console.log(queryString)
+
   // 5
-  // console.log("queryString:", queryString, queryParams);
+  console.log("queryString_0_0_0", queryString, queryParams);
 
   // 6
   return pool.query(queryString, queryParams).then((res) => res.rows);
